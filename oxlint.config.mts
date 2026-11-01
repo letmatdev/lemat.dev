@@ -24,7 +24,11 @@ export default defineConfig({
   rules: {
     'func-names': 'off',
     'func-style': 'off',
+    'jsx-a11y/prefer-tag-over-role': 'off',
+    'react-doctor/only-export-components': 'off',
     'react/function-component-definition': 'off',
+    'sonarjs/function-name': 'off',
+    'sonarjs/no-wildcard-import': 'off',
     'typescript/ban-ts-comment': 'off',
     'typescript/consistent-type-definitions': 'off'
   },

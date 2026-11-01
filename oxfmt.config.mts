@@ -1,5 +1,5 @@
-import { defineConfig } from "oxfmt";
-import ultracite from "ultracite/oxfmt";
+import { defineConfig } from 'oxfmt'
+import ultracite from 'ultracite/oxfmt'
 
 export default defineConfig({
   ...ultracite,
@@ -13,5 +13,5 @@ export default defineConfig({
   sortPackageJson: true,
   sortTailwindcss: true,
   tabWidth: 2,
-  trailingComma: "none",
-});
+  trailingComma: 'none'
+})
