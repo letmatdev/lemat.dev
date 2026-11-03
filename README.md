@@ -5,7 +5,6 @@
 </a>
 </p>
 
-
 <h2 align="center">www.matheusscode.com</h2>
 
 <p align="center">
@@ -16,8 +15,8 @@
     <br />
     <a href="#introduction"><strong>Introduction</strong></a> ·
     <a href="#features"><strong>Features</strong></a> ·
-    <a href="#tech-stack"><strong>Tech Stack</strong></a> · 
-    <a href="#follow-me"><strong>Follow Me</strong></a> 
+    <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
+    <a href="#follow-me"><strong>Follow Me</strong></a>
 </p>
 
 <p align="center">
@@ -62,7 +61,6 @@
 - [**Notion**](https://www.notion.so/): An all-in-one workspace for note-taking, project management, and task tracking.
 - [**Magic UI**](https://magic.link/): A platform for implementing passwordless authentication using email and social logins.
 - [**Framer Motion**](https://www.framer.com/api/motion/): A popular library for adding animations and transitions to React applications, providing smooth and customizable animations.
-
 
 <br/>
 

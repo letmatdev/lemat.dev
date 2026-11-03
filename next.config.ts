@@ -1,27 +1,34 @@
-import type { NextConfig } from "next"
+// oxlint-disable sort-keys
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   /* config options here */
+  cacheComponents: true,
+  partialPrefetching: true,
+  reactCompiler: true,
+
+  turbopack: {
+    rules: {
+      '*.css': {
+        as: '*.css',
+        loaders: ['@tailwindcss/turbopack']
+      }
+    }
+  },
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "avatars.githubusercontent.com",
-        pathname: "/u/**",
+        hostname: 'www.google.com',
+        pathname: '/s2/favicons/**',
+        protocol: 'https'
       },
       {
-        protocol: "https",
-        hostname: "github.com",
-        pathname: "/user-attachments/assets/**",
-      },
-      {
-        protocol: "https",
-        hostname: "prod-files-secure.s3.us-west-2.amazonaws.com",
-        pathname: "/**",
-      },
-    ],
-  },
-  output: "standalone",
+        hostname: 'fsjbinvsvbhzonvagiqg.supabase.co',
+        pathname: '/storage/v1/**',
+        protocol: 'https'
+      }
+    ]
+  }
 }
 
 export default nextConfig

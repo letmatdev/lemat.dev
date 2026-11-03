@@ -19,24 +19,16 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/ui/*": ["./src/ui/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/config/*": ["./config/*"],
-      "@/utils/*": ["./src/utils/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/interfaces/*": ["./interfaces/*"],
-      "@/public/*": ["./public/*"]
-    },
-    "strictNullChecks": true
+      "@/*": ["./*"]
+    }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/http/notion/get-works.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
   ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": ["node_modules"]
 }
