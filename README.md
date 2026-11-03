@@ -1,4 +1,3 @@
-
 <p align="center">
 <a href="https://www.matheusscode.com" >
  <img alt="banner" src="https://github.com/user-attachments/assets/b263f49a-e2b9-4fe2-9126-f3cd352c0f57" />
