@@ -126,7 +126,7 @@ function ItemContent({
     <div
       data-slot='item-content'
       className={cn(
-        'flex flex-1 flex-col gap-1 group-data-[size=xs]/item:gap-0 [&+[data-slot=item-content]]:flex-none',
+        'flex flex-1 flex-col group-data-[size=xs]/item:gap-0 [&+[data-slot=item-content]]:flex-none',
         className
       )}
       {...props}
@@ -158,7 +158,7 @@ function ItemDescription({
     <p
       data-slot='item-description'
       className={cn(
-        'line-clamp-2 text-left text-sm leading-normal font-normal text-muted-foreground group-data-[size=xs]/item:text-xs [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary',
+        'line-clamp-2 mt-0.5 text-left text-sm leading-normal font-normal text-muted-foreground group-data-[size=xs]/item:text-xs [&>a]:underline-offset-4 [&>a:hover]:text-primary',
         className
       )}
       {...props}

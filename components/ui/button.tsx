@@ -15,10 +15,9 @@ const buttonVariants = cva(
     variants: {
       size: {
         default:
-          'h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
-        icon: 'size-8',
-        'icon-lg': 'size-9',
-        lg: 'h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2'
+          'min-h-11 gap-1.5 py-[10px] pl-2.5 pr-[18px] has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2',
+        icon: 'size-9',
+        'icon-lg': 'size-11'
       },
       variant: {
         default:
