@@ -4,6 +4,7 @@ import React from 'react'
 
 import { cn } from '@/lib/cn'
 
+import { Transmutation } from './transmutation'
 import {
   Item,
   ItemContent,
@@ -117,35 +118,36 @@ function EntryCard({
                 typeof item === 'string' ? undefined : item.logo
 
               return (
-                <ItemDescription
-                  key={title}
-                  className={cn(
-                    'relative ml-0 inline-flex select-none items-center gap-1.5 transition-colors hover:text-foreground',
-                    multipleItems &&
-                      'pl-5 after:absolute after:top-2 after:left-2 after:size-0.5 after:rounded-r-full after:bg-muted-foreground after:transition-all hover:after:w-1.5'
-                  )}
-                >
-                  {logo && (
-                    <EntryLogoView
-                      logo={logo}
-                      title={title}
-                      className='size-4 shrink-0'
-                    />
-                  )}
+                <Transmutation key={title}>
+                  <ItemDescription
+                    className={cn(
+                      'relative ml-0 inline-flex select-none items-center gap-1.5 transition-colors hover:text-foreground',
+                      multipleItems &&
+                        'pl-5 after:absolute after:top-2 after:left-2 after:size-0.5 after:rounded-r-full after:bg-muted-foreground after:transition-all hover:after:w-1.5'
+                    )}
+                  >
+                    {logo && (
+                      <EntryLogoView
+                        logo={logo}
+                        title={title}
+                        className='size-4 shrink-0'
+                      />
+                    )}
 
-                  {href ? (
-                    <a
-                      href={href}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='inline-flex items-baseline gap-1 outline-none'
-                    >
-                      {title}
-                    </a>
-                  ) : (
-                    title
-                  )}
-                </ItemDescription>
+                    {href ? (
+                      <a
+                        href={href}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='inline-flex items-baseline gap-1 outline-none'
+                      >
+                        {title}
+                      </a>
+                    ) : (
+                      title
+                    )}
+                  </ItemDescription>
+                </Transmutation>
               )
             })}
         </div>

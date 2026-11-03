@@ -2,6 +2,8 @@ import React from 'react'
 
 import { cn } from '@/lib/cn'
 
+import { Transmutation } from './transmutation'
+
 function Section({
   children,
   className,
@@ -25,9 +27,11 @@ function Section({
         )}
       >
         {hasTitle && (
-          <h2 className='text-muted-foreground m-0 text-left text-xs leading-snug font-semibold'>
-            {title}
-          </h2>
+          <Transmutation time={0.6}>
+            <h2 className='text-muted-foreground m-0 text-left text-xs leading-snug font-semibold'>
+              {title}
+            </h2>
+          </Transmutation>
         )}
         {children}
       </div>

@@ -6,6 +6,7 @@ import { List, ListItem } from '@/components/list'
 import { PartnerLink } from '@/components/partner-link'
 import { Section } from '@/components/section'
 import { SocialLink } from '@/components/social-link'
+import { Transmutation } from '@/components/transmutation'
 import {
   Avatar,
   AvatarFallback,
@@ -26,53 +27,70 @@ export default async function Page() {
 
   return (
     <main className='mx-auto w-full max-w-98 overflow-x-visible px-4 py-16'>
-      <header className='mb-3 flex w-full flex-col items-start text-left'>
-        <Avatar
-          className='mb-4'
-          size='lg'
-        >
-          <AvatarImage
-            src={coreMetadata.logo}
-            alt={coreMetadata.title}
-            className='object-cover'
-            width={64}
-            draggable={false}
-            height={64}
-          />
-          <AvatarFallback>MF</AvatarFallback>
-        </Avatar>
-        <h1 className='text-2xl font-semibold tracking-tight text-inherit'>
-          {coreMetadata.title}
-        </h1>
-      </header>
+      <Transmutation className='w-full'>
+        <header className='mb-3 flex w-full flex-col items-start text-left'>
+          <Avatar
+            className='mb-4'
+            size='lg'
+          >
+            <AvatarImage
+              src={coreMetadata.logo}
+              alt={coreMetadata.title}
+              className='object-cover'
+              width={64}
+              draggable={false}
+              height={64}
+            />
+            <AvatarFallback>MF</AvatarFallback>
+          </Avatar>
+          <h1 className='text-2xl font-semibold tracking-tight text-inherit'>
+            {coreMetadata.title}
+          </h1>
+        </header>
+      </Transmutation>
+
       <Section>
         <List>
           {socialNetworks.map((socialNetwork) => (
-            <SocialLink
-              href={socialNetwork.href}
+            <ListItem
               key={socialNetwork.id}
-              data={socialNetwork}
-            />
+              className='flex-none'
+            >
+              <Transmutation>
+                <SocialLink
+                  href={socialNetwork.href}
+                  data={socialNetwork}
+                />
+              </Transmutation>
+            </ListItem>
           ))}
         </List>
       </Section>
-      <Section>
-        <p className='text-muted-foreground text-left text-base leading-relaxed opacity-90'>
-          I’m currently focused on building tools and developer
-          experiences that make software development faster, smoother,
-          and more enjoyable.
-        </p>
-      </Section>
+      <Transmutation
+        time={0.8}
+        className='w-full'
+      >
+        <Section>
+          <p className='text-muted-foreground text-left text-base leading-relaxed opacity-90'>
+            I’m currently focused on building tools and developer
+            experiences that make software development faster,
+            smoother, and more enjoyable.
+          </p>
+        </Section>
+      </Transmutation>
+
       <Section>
         <List vertical>
           {externalLinks.map((externalLink) => (
             <ListItem key={externalLink.id}>
-              <PartnerLink
-                variant='outline'
-                {...externalLink}
-              >
-                {externalLink.label}
-              </PartnerLink>
+              <Transmutation>
+                <PartnerLink
+                  variant='outline'
+                  {...externalLink}
+                >
+                  {externalLink.label}
+                </PartnerLink>
+              </Transmutation>
             </ListItem>
           ))}
         </List>
@@ -84,10 +102,12 @@ export default async function Page() {
               work.items && work.items.length > 1
             return (
               <ListItem key={work.ref}>
-                <EntryCard
-                  multipleItems={hasMultipleItems}
-                  data={work}
-                />
+                <Transmutation>
+                  <EntryCard
+                    multipleItems={hasMultipleItems}
+                    data={work}
+                  />
+                </Transmutation>
               </ListItem>
             )
           })}
@@ -101,10 +121,12 @@ export default async function Page() {
 
             return (
               <ListItem key={contributing.ref}>
-                <EntryCard
-                  multipleItems={hasMultipleItems}
-                  data={contributing}
-                />
+                <Transmutation>
+                  <EntryCard
+                    multipleItems={hasMultipleItems}
+                    data={contributing}
+                  />
+                </Transmutation>
               </ListItem>
             )
           })}
@@ -114,7 +136,9 @@ export default async function Page() {
         <Grid className='grid-cols-2'>
           {tools.life.map((tool) => (
             <GridItem key={tool.ref}>
-              <EntryCard data={tool} />
+              <Transmutation>
+                <EntryCard data={tool} />
+              </Transmutation>
             </GridItem>
           ))}
         </Grid>
@@ -123,7 +147,9 @@ export default async function Page() {
         <Grid className='grid-cols-2'>
           {tools.apps.map((tool) => (
             <GridItem key={tool.ref}>
-              <EntryCard data={tool} />
+              <Transmutation>
+                <EntryCard data={tool} />
+              </Transmutation>
             </GridItem>
           ))}
         </Grid>
@@ -180,12 +206,13 @@ export default async function Page() {
       <Section title='Gallery'>
         <Gallery>
           {Array.from({ length: 10 }).map((item, index) => (
-            <GalleryImage
-              src={`/gallery/portrait-${index + 1}.jpg`}
-              className={cn('h-36', index % 2 && 'h-46')}
-              key={index + 1}
-              alt={`Image URL ${item}`}
-            />
+            <Transmutation key={index + 1}>
+              <GalleryImage
+                src={`/gallery/portrait-${index + 1}.jpg`}
+                className={cn('h-36', index % 2 && 'h-46')}
+                alt={`Image URL ${item}`}
+              />
+            </Transmutation>
           ))}
         </Gallery>
       </Section>
