@@ -21,6 +21,14 @@ export const contributions: EntryData[] = [
   {
     items: [
       {
+        href: 'https://github.com/magicuidesign/cli/pull/4',
+        title: 'Add Visual Studio Code MCP Integration'
+      },
+      {
+        href: 'https://github.com/magicuidesign/cli/pull/3',
+        title: 'Add Codex MCP Installation Support'
+      },
+      {
         href: 'https://github.com/magicuidesign/magicui/pull/955',
         title: 'Add Kinetic Text component'
       },
