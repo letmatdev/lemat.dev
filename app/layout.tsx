@@ -1,6 +1,5 @@
 // oxlint-disable react-doctor/nextjs-no-img-element
 import { Geist } from 'next/font/google'
-import Image from 'next/image'
 
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 import { TooltipProvider } from '@/components/ui/tooltip'
@@ -30,15 +29,12 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         <TooltipProvider>
           <>
             {children}
-            <footer className='px-4 py-8 text-center'>
-              <Image
-                className='mx-auto opacity-75 transition-opacity duration-500 hover:opacity-100'
-                src='/credits.svg'
-                alt='Long life for J.C <3'
-                priority
-                width={300}
-                height={300}
-              />
+            <footer className='flex flex-col gap-2 px-4 py-8 text-center'>
+              <p className='text-foreground mx-auto w-full max-w-xs font-mono text-xs italic'>
+                &quot;So whether you eat or drink or whatever else you
+                do, do it all for the glory of God.&quot; ~ 1
+                Corinthians 10:31
+              </p>
             </footer>
           </>
         </TooltipProvider>
